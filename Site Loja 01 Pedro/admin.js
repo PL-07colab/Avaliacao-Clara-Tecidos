@@ -53,8 +53,8 @@ inputSenha.addEventListener('keypress', (e) => {
 
 async function carregarDados() {
     const vendedoraSel = filtroVendedora.value;
-    const dataInicio = filtroDataInicio.value; // Formato yyyy-mm-dd
-    const dataFim = filtroDataFim.value;       // Formato yyyy-mm-dd
+    const dataInicio = filtroDataInicio.value; 
+    const dataFim = filtroDataFim.value;       
     
     tabelaCorpo.innerHTML = "<tr><td colspan='4'>Buscando dados...</td></tr>";
     
@@ -93,11 +93,11 @@ async function carregarDados() {
         totalSpan.innerText = totalContado;
     } catch (error) {
         console.error(error);
-        tabelaCorpo.innerHTML = "<tr><td colspan='4'>Erro ao carregar dados. Verifique as regras do Firebase.</td></tr>";
+        tabelaCorpo.innerHTML = "<tr><td colspan='4'>Erro ao carregar dados.</td></tr>";
     }
 }
 
-// Event Listeners para atualização automática ao mudar filtros
+// Event Listeners
 filtroVendedora.addEventListener('change', carregarDados);
 filtroDataInicio.addEventListener('change', carregarDados);
 filtroDataFim.addEventListener('change', carregarDados);
